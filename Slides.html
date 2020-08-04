@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides Photos</title>
+    <script>
+        var i = 0; 			// Start Point
+var images = [];	// Images Array
+var time = 2000;	// Time Between Switch
+	 
+// Image List
+images[0] = "papu4.jpeg";
+images[1] = "1.jpg";
+
+images[2] = "14.jpg";
+images[3] = "slick5.jpg";
+images[4] = "slick8.jpg";
+images[5] = "slick5.jpg";
+images[6] = "sumith.jpg";
+
+
+
+// Change Image
+function changeImg(){
+	document.slide.src = images[i];
+
+	// Check If Index Is Under Max
+	if(i < images.length - 1){
+	  // Add 1 to Index
+	  i++; 
+	} else { 
+		// Reset Back To O
+		i = 0;
+	}
+
+	// Run function every x seconds
+	setTimeout("changeImg()", time);
+}
+
+// Run function when page loads
+window.onload=changeImg;
+    </script>
+</head>
+<body>
+	<button><a href="index.html">Home</a></button>
+
+    <img name="slide" width="1300" height="700" /> 
+</body>
+</html>
